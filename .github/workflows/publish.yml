@@ -1,13 +1,25 @@
 # This workflow will run tests using node and then publish a package to GitHub Packages when a release is created
 # For more information see: https://docs.github.com/en/actions/publishing-packages/publishing-nodejs-packages
 
-name: Node.js Package
+name: Build and deploy npm package and documentation
 
 on:
   release:
     types: [created]
 
 jobs:
+  deploy-storybook:
+    environment:
+      name: github-pages
+      url: ${{ steps.build-publish.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+    - id: build-publish
+      uses: bitovi/github-actions-react-to-ghp@v1.2.0
+      with:
+        path: dist/storybook
+        build_command: npm run build-storybook
+
   build:
     runs-on: ubuntu-latest
     steps:

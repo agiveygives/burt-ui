@@ -1,9 +1,8 @@
 import styled from 'styled-components';
 import { darken } from 'polished';
-import DefaultTheme from 'themes';
-import { ButtonType } from './Button.types';
+import { StyledSelectTypes } from '../Select.types';
 
-const StyledButton = styled.button<ButtonType>`
+const StyledNativeSelect = styled.select<StyledSelectTypes>`
   padding: 0.5rem;
   font-weight: 700;
   border: 0;
@@ -11,15 +10,6 @@ const StyledButton = styled.button<ButtonType>`
   display: inline-block;
   line-height: 1;
   transition: 0.3s ease-in-out;
-
-  &:active:hover {
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
-  }
-
-  &:hover, &:active {
-    font-weight: 600;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  }
 
   /* variation Styles */
   ${props => {
@@ -41,8 +31,18 @@ const StyledButton = styled.button<ButtonType>`
           color: ${props.theme.colors.white};
           background-color: ${props.theme.colors.primary};
 
+          option {
+            background-color: ${props.theme.colors.white};
+            color: ${props.theme.colors.primary};
+          }
+
           &:hover, &:active {
             background-color: ${darken(0.15, props.theme.colors.primary)};
+
+            option {
+              background-color: ${props.theme.colors.white};
+              color: ${props.theme.colors.primary};
+            }
           }
         `
     }
@@ -50,7 +50,7 @@ const StyledButton = styled.button<ButtonType>`
 
   /* size */
   ${props => {
-    switch(props.size) {
+    switch(props.inputSize) {
       case 'large':
         return`
           font-size: 16px;
@@ -99,8 +99,4 @@ const StyledButton = styled.button<ButtonType>`
   }}
 `;
 
-StyledButton.defaultProps = {
-  theme: DefaultTheme,
-}
-
-export default StyledButton;
+export default StyledNativeSelect;

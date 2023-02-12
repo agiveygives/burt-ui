@@ -1,9 +1,8 @@
 import { MouseEventHandler } from 'react';
 
 export type ButtonType = {
-  label: string,
-  size?: 'lg' | 'md' | 'sm'
-  btnType?: 'primary' | 'secondary' | 'ghost'
+  size?: 'large' | 'medium' | 'small'
+  variation?: 'primary' | 'secondary' | 'ghost'
   onClick?: MouseEventHandler<HTMLButtonElement>
   rounded?: 'soft' | 'hard'
   isActive?: boolean

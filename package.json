@@ -21,7 +21,8 @@
     "rollup-watch": "rollup --bundleConfigAsCjs -c -w",
     "build": "npm run prebuild && rollup -c --bundleConfigAsCjs",
     "prepublish": "npm run build",
-    "test": "jest --watchAll",
+    "test": "jest",
+    "test:watch": "jest --watchAll",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "postinstall": "npm run ts-declarations"

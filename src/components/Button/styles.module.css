@@ -14,7 +14,7 @@
 }
 
 .button.primary {
-  background-color: var(--button-primary-background);
+  background-color: var(--primary);
   color: #0e0e0e;
 }
 

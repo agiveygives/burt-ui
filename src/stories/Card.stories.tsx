@@ -2,41 +2,26 @@ import React from 'react';
 import { StoryFn, Meta } from '@storybook/react';
 import { Title, Subtitle, Description, Controls } from '@storybook/blocks';
 
-import { AppHeader, ThemeProvider } from 'components';
+import { Card, ThemeProvider } from 'components';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: 'Components/AppHeader',
-  component: AppHeader,
+  title: 'Components/Card',
+  component: Card,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {},
   args: {
-    logoUri: '/logoipsum-284.svg',
-    navLinks: [
-      { href: 'javascript:void(0)', display: 'Dashboard' },
-      { href: 'javascript:void(0)', display: 'Shop' },
-      { href: 'javascript:void(0)', display: 'About Us' },
-    ],
+    title: 'Card Title',
   },
-  parameters: {
-    docs: {
-      page: () => (
-        <>
-          <Title />
-          <Subtitle />
-          <Description />
-          <Controls />
-        </>
-      ),
-    },
-  },
-} as Meta<typeof AppHeader>;
+} as Meta<typeof Card>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 // @ts-ignore
-const Template: StoryFn<typeof AppHeader> = (args) => (
+const Template: StoryFn<typeof Card> = (args) => (
   <ThemeProvider>
-    <AppHeader {...args} />
+    <Card {...args}>
+      <p>Content</p>
+    </Card>
   </ThemeProvider>
 );
 

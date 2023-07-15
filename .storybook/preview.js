@@ -1,5 +1,3 @@
-const defaultTheme = require('../src/themes');
-
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
   controls: {
@@ -10,8 +8,6 @@ export const parameters = {
   },
 }
 
-// All stories expect a theme arg
-export const argTypes = { theme: {} };
+export const argTypes = {};
 
-// The default value of the theme arg to all stories
-export const args = { theme: defaultTheme };
+export const args = {};

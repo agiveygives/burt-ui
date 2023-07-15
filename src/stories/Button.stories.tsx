@@ -1,8 +1,7 @@
 import React from 'react';
 import { StoryFn, Meta } from '@storybook/react';
 
-import { Button } from 'components';
-import DefaultTheme from 'themes';
+import { Button, ThemeProvider } from 'components';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -12,12 +11,15 @@ export default {
   argTypes: {},
   args: {
     children: 'Button',
-    theme: DefaultTheme,
   }
 } as Meta<typeof Button>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: StoryFn<typeof Button> = (args) => <Button {...args}>{args.children}</ Button>;
+const Template: StoryFn<typeof Button> = (args) => (
+  <ThemeProvider>
+    <Button {...args}>{args.children}</ Button>
+  </ThemeProvider>
+);
 
 export const Primary = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args

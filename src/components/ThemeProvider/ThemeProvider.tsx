@@ -1,6 +1,7 @@
 import React, { FC, ReactNode } from 'react';
 import useTheme from 'hooks/useTheme';
 import defaultTheme from '../../themes';
+import '../../global.css';
 
 interface ThemeProviderProps {
   children: ReactNode;

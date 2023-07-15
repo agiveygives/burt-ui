@@ -4,6 +4,6 @@ export type PropTypes = {
   className?: string;
   children: JSX.Element;
   header: AppHeaderPropTypes,
-  footer: JSX.Element;
+  footer?: JSX.Element;
   centered?: boolean;
 }

@@ -5,7 +5,7 @@ export type AppHeaderPropTypes = {
     href: string,
     display: string,
   }[];
-  menu: {
+  menu?: {
     icon: JSX.Element,
     options: {
       display: string,

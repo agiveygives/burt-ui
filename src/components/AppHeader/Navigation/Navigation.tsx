@@ -1,16 +1,19 @@
 import React, { FC } from 'react';
-import StyledNavigation from './Navigation.styles';
+import classnames from 'classnames';
 import { NavigationType } from './Navigation.types';
+import styles from './styles.module.css';
 
-const Navigation: FC<NavigationType> = ({ navItems }) => {
+const Navigation: FC<NavigationType> = ({ navLinks, scrolled }) => {
   return (
-    <StyledNavigation navItems={navItems}>
+    <ul className={classnames({ [styles.scroll]: scrolled }, styles.container)}>
       {
-        navItems.map(({ to, display }) => (
-          <li key={to}><a href={to}>{display}</a></li>
+        navLinks.map(({ href, display }) => (
+          <li key={href}>
+            <a href={href} className={styles.link}>{display}</a>
+          </li>
         ))
       }
-    </StyledNavigation>
+    </ul>
   );
 }
 

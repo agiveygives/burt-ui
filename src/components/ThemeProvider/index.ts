@@ -1,1 +1,1 @@
-export { ThemeProvider as default } from 'styled-components';
+export { default } from './ThemeProvider';

@@ -1,23 +1,26 @@
-import React, { FC } from 'react';
-import { useTheme } from 'styled-components'
-import { AppHeaderType } from './AppHeader.types';
-import StyledAppHeader from './AppHeader.styles'
+import React, { useState } from 'react';
+import classNames from 'classnames';
 import Navigation from './Navigation';
+import useScrollPosition from '../../hooks/useScrollPosition';
+import { AppHeaderPropTypes } from '../AppHeader/types';
+import styles from './styles.module.css';
 
-const AppHeader: FC<AppHeaderType> = ({ isRounded, logoSrc, navItems }) => {
-  const theme = useTheme();
+const AppHeader = ({ logoUri, navLinks, menu }: AppHeaderPropTypes) => {
+  const scrollPosition = useScrollPosition();
 
   return (
-    <StyledAppHeader theme={theme} isRounded={isRounded}>
-      <div>
-        <img src={logoSrc} />
+    <header className={classNames(styles.header, { [`${styles.headerScroll}`]: scrollPosition > 0 })}>
+      <div className={styles.logoContainer}>
+        <img className={styles.logo} src={logoUri} alt='' />
       </div>
-      <Navigation navItems={navItems} />
+
+      <Navigation navLinks={navLinks} scrolled={scrollPosition > 0} />
+
       <div>
-        Menus
+        {"menu.icon"}
       </div>
-    </StyledAppHeader>
-  );
-}
+    </header>
+  )
+};
 
 export default AppHeader;

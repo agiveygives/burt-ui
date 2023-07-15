@@ -1,8 +1,7 @@
 import React from 'react';
 import { StoryFn, Meta } from '@storybook/react';
-import { ThemeProvider } from 'styled-components';
 
-import Select from 'components/Select';
+import { ThemeProvider, Select } from 'components';
 import DefaultTheme from 'themes';
 
 export default {

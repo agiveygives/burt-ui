@@ -1,6 +1,7 @@
 export type NavigationType = {
-  navItems: {
-    to: string;
+  navLinks: {
+    href: string;
     display: string;
-  }[]
+  }[];
+  scrolled: boolean;
 }

@@ -26,9 +26,6 @@ AppLayout.defaultProps = {
   header: {
     logoUri: '',
     navLinks: [],
-    menu: {
-      presentation: 'auto'
-    }
   },
 }
 

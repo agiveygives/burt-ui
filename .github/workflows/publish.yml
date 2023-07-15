@@ -8,7 +8,18 @@ on:
     types: [created]
 
 jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - run: npm ci
+      # - run: npm test
+
   deploy-storybook:
+    needs: build
     environment:
       name: github-pages
       url: ${{ steps.build-publish.outputs.page_url }}
@@ -19,16 +30,6 @@ jobs:
       with:
         path: dist/storybook
         build_command: npm run build-storybook
-
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 16
-      - run: npm ci
-      - run: npm test
 
   publish-npm:
     needs: build

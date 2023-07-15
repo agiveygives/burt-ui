@@ -1,0 +1,24 @@
+name: Build and deploy storybook
+
+on:
+  push:
+    branches: [ "main" ]
+  release:
+    types: [created]
+
+jobs:
+  build-and-publish-storybook:
+    environment:
+      name: github-pages
+      url: ${{ steps.build-publish.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-node@v3
+      with:
+        node-version: 16
+    - id: build-publish
+      uses: bitovi/github-actions-react-to-ghp@v1.2.0
+      with:
+        path: dist/storybook
+        build_command: npm run build-storybook

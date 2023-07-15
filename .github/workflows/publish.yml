@@ -25,6 +25,11 @@ jobs:
       url: ${{ steps.build-publish.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-node@v3
+      with:
+        node-version: 16
+    - run: npm ci
     - id: build-publish
       uses: bitovi/github-actions-react-to-ghp@v1.2.0
       with:

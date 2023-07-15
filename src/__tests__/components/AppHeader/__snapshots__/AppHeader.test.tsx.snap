@@ -23,7 +23,7 @@ exports[`<AppHeader /> should render without crashing 1`] = `
           <li>
             <a
               class="src-components-AppHeader-Navigation-link-ZkbHIOIacv"
-              href="javascript:void(0)"
+              href="/dashboard"
             >
               Dashboard
             </a>
@@ -31,7 +31,7 @@ exports[`<AppHeader /> should render without crashing 1`] = `
           <li>
             <a
               class="src-components-AppHeader-Navigation-link-ZkbHIOIacv"
-              href="javascript:void(0)"
+              href="/shop"
             >
               Shop
             </a>
@@ -39,7 +39,7 @@ exports[`<AppHeader /> should render without crashing 1`] = `
           <li>
             <a
               class="src-components-AppHeader-Navigation-link-ZkbHIOIacv"
-              href="javascript:void(0)"
+              href="/aboutUs"
             >
               About Us
             </a>
@@ -70,7 +70,7 @@ exports[`<AppHeader /> should render without crashing 1`] = `
         <li>
           <a
             class="src-components-AppHeader-Navigation-link-ZkbHIOIacv"
-            href="javascript:void(0)"
+            href="/dashboard"
           >
             Dashboard
           </a>
@@ -78,7 +78,7 @@ exports[`<AppHeader /> should render without crashing 1`] = `
         <li>
           <a
             class="src-components-AppHeader-Navigation-link-ZkbHIOIacv"
-            href="javascript:void(0)"
+            href="/shop"
           >
             Shop
           </a>
@@ -86,7 +86,7 @@ exports[`<AppHeader /> should render without crashing 1`] = `
         <li>
           <a
             class="src-components-AppHeader-Navigation-link-ZkbHIOIacv"
-            href="javascript:void(0)"
+            href="/aboutUs"
           >
             About Us
           </a>

@@ -5,4 +5,5 @@ module.exports = {
   transform: {
     "^.+\\.css$": ["jest-transform-css", { modules: true }]
   },
+  testMatch: ['**/__tests__/**/*.test.[jt]s?(x)', "!**/types/**/*"],
 };

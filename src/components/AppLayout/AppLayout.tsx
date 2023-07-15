@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { FC } from 'react';
 import classNames from 'classnames';
 import AppHeader from 'components/AppHeader';
 import { PropTypes } from './types';
 import styles from './styles.module.css';
 
-const AppLayout = ({ className, children, footer, header, centered }: PropTypes) => {
+const AppLayout: FC<PropTypes> = ({ className, children, footer, header, centered }) => {
   return (
     <main className={classNames(styles.appContainer, className)}>
       <AppHeader logoUri={header.logoUri} navLinks={header.navLinks} menu={header.menu} />

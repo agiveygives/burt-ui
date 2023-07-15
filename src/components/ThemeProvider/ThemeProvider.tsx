@@ -9,12 +9,12 @@ interface ThemeProviderProps {
 }
 
 const ThemeProvider: FC<ThemeProviderProps> = ({ children, theme = defaultTheme }) => {
-  useTheme({
-    ...defaultTheme,
-    ...theme,
-  });
+	useTheme({
+		...defaultTheme,
+		...theme,
+	});
 
-  return <>{children}</>;
-}
+	return <>{children}</>;
+};
 
 export default ThemeProvider;

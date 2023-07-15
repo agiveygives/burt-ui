@@ -1,4 +1,4 @@
-import { AppHeaderPropTypes } from "../AppHeader/types";
+import { AppHeaderPropTypes } from '../AppHeader/types';
 
 export type PropTypes = {
   className?: string;

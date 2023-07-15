@@ -8,6 +8,8 @@ on:
 
 jobs:
   build-and-publish-storybook:
+    permissions:
+      id-token: 'write'
     environment:
       name: github-pages
       url: ${{ steps.build-publish.outputs.page_url }}

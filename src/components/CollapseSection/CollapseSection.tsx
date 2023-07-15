@@ -1,15 +1,10 @@
 import React, { FC, useState, useEffect, useRef } from 'react';
 import classNames from 'classnames';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
+import { CollapseSectionPropTypes } from './types';
+import styles from './styles.module.css';
 
-import StyledCollapseSection from './CollapseSection.styles';
-import { CollapseSectionTypes } from './CollapseSection.types';
-
-const CollapseSection: FC<CollapseSectionTypes> = ({
-  headerText, isCollapsed, className, variation, children
-}) => {
-  const [collapsed, setCollapsed] = useState<boolean>(isCollapsed || false);
+const CollapseSection: FC<CollapseSectionPropTypes> = ({ headerText, alignHeader, className, headerClassName, children }) => {
+  const [collapsed, setCollapsed] = useState<boolean>(false);
   const contentElementRef = useRef<HTMLDivElement>(null);
 
   const collapseSection = (element: HTMLDivElement) => {
@@ -43,12 +38,6 @@ const CollapseSection: FC<CollapseSectionTypes> = ({
   }
 
   useEffect(() => {
-    if (isCollapsed !== undefined) {
-      setCollapsed(isCollapsed);
-    }
-  }, [isCollapsed]);
-
-  useEffect(() => {
     const contentElement = contentElementRef.current;
 
     const expandTransitionEndListener = () => {
@@ -71,35 +60,35 @@ const CollapseSection: FC<CollapseSectionTypes> = ({
   }, [collapsed]);
 
   return (
-    <StyledCollapseSection className={className} variation={variation}>
+    <article className={classNames(styles.container, className)}>
       <div
-        className='section-header'
+        className={
+          classNames(
+            styles.sectionHeader,
+            {
+              [styles.centered]: alignHeader === 'center',
+            },
+            headerClassName,
+          )
+        }
         tabIndex={0}
         onClick={() => setCollapsed((oldState) => !oldState)}
       >
-        <FontAwesomeIcon
-          className={classNames(
-            'header-icon',
-            { 'collapsed-icon': collapsed }
-          )}
-          icon={faCaretDown}
-        />
         <h2>{headerText}</h2>
       </div>
 
       <div
-        className='content'
+        className={styles.content}
         ref={contentElementRef}
       >
         {children}
       </div>
-    </StyledCollapseSection>
+    </article>
   );
 }
 
 CollapseSection.defaultProps = {
-  isCollapsed: false,
-  variation: 'secondary',
+  alignHeader: 'center',
 }
 
 export default CollapseSection;

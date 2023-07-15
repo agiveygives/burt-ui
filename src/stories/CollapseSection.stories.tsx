@@ -1,9 +1,8 @@
 import React from 'react';
 import { StoryFn, Meta } from '@storybook/react';
 
-import CollapseSection from 'components/CollapseSection';
+import { CollapseSection, ThemeProvider } from 'components';
 import DefaultTheme from 'themes';
-import { ThemeProvider } from 'styled-components';
 
 export default {
   title: 'Components/CollapseSection',

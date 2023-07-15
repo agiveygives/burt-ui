@@ -1,0 +1,53 @@
+.scroll {
+  --header-text-color: var(--header-text-color-scroll);
+}
+
+.container {
+  display: flex;
+  gap: 10px;
+  color: var(--header-text-color);
+  font-weight: 600;
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+}
+
+.container > li:not(:last-child) {
+  padding-right: 10px;
+  border-right: 1px solid var(--header-text-color);
+}
+
+.link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  position: relative;
+  padding: 2px 0px;
+}
+
+.link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0.1em;
+  background-color: var(--header-text-color);
+  opacity: 0;
+  transition: opacity 300ms, transform 300ms;
+}
+
+.link:hover::after, .link:focus::after {
+  opacity: 1;
+  transform: translate3d(0, 0.2em, 0);
+}
+
+.link::after {
+  opacity: 1;
+  transform: scale(0);
+  transform-origin: center;
+}
+
+.link:hover::after, .link:focus::after {
+  transform: scale(1);
+}

@@ -1,30 +1,18 @@
-import React, { FC } from 'react';
-import { useTheme } from 'styled-components';
-import StyledNativeSelect from './NativeSelect.styles';
-import { BaseSelectProps } from '../Select.types';
+import React from 'react';
+import classNames from 'classnames';
+import { NativeSelectPropTypes } from './types';
+import sharedStyled from '../styles.module.css';
 
-const NativeSelect: FC<BaseSelectProps> = ({
-  variation, inputSize, rounded, isDisabled, placeholder, options
-}) => {
-  const theme = useTheme();
-
+const NativeSelect = ({ className, options }: NativeSelectPropTypes) => {
   return (
-    <StyledNativeSelect
-      variation={variation}
-      inputSize={inputSize}
-      rounded={rounded}
-      isDisabled={isDisabled}
-      placeholder={placeholder}
-      theme={theme}
-    >
-      <option value='' disabled selected hidden>{placeholder}</option>
+    <select className={classNames(sharedStyled.select, className)}>
       {
         options.map(({ value, display }) => (
           <option key={value} value={value}>{display}</option>
         ))
       }
-    </StyledNativeSelect>
-  );
+    </select>
+  )
 }
 
 export default NativeSelect;

@@ -4,9 +4,15 @@ import typescript from "@rollup/plugin-typescript";
 import terser from "@rollup/plugin-terser";
 import external from "rollup-plugin-peer-deps-external";
 import postcss from "rollup-plugin-postcss";
+import cssModules from 'css-modules-require-hook';
 import dts from "rollup-plugin-dts";
 
 const packageJson = require("./package.json");
+
+cssModules({
+  extensions: ['.css'],
+  camelCase: true,
+});
 
 export default [
   {
@@ -29,7 +35,9 @@ export default [
       resolve(),
       commonjs(),
       typescript({ tsconfig: "./tsconfig.json" }),
-      postcss(),
+      postcss({
+        modules: true,
+      }),
       terser(),
     ],
   },

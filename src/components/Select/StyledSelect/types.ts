@@ -1,4 +1,4 @@
-import { BaseSelectPropTypes } from "../types";
+import { BaseSelectPropTypes } from '../types';
 
 export interface StyledSelectPropTypes extends BaseSelectPropTypes {
   searchable?: boolean;

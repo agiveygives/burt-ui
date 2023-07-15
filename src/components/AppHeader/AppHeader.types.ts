@@ -1,4 +1,4 @@
-import { NavigationType } from "./Navigation/Navigation.types";
+import { NavigationType } from './Navigation/Navigation.types';
 
 export type StyledAppHeaderType = {
   isRounded?: boolean;

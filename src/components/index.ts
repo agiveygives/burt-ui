@@ -3,6 +3,7 @@ export { default as AppLayout } from './AppLayout';
 export { default as Button } from './Button';
 export { default as Card } from './Card';
 export { default as CollapseSection } from './CollapseSection';
+export { NumberInput, TextInput, TextArea } from './Inputs';
 export { default as LabeledContainer } from './LabeledContainer';
 export { default as Popover } from './Popover';
 export { default as Select, StyledSelect, NativeSelect } from './Select';

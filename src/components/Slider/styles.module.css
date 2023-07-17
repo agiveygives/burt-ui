@@ -25,6 +25,7 @@
 
 .sliderInput {
   -webkit-appearance: none;
+  appearance: none;
   width: 100%;
   cursor: grab;
   height: 8px;

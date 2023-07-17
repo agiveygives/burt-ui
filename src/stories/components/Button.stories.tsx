@@ -26,4 +26,6 @@ export const Primary = Template.bind({});
 Primary.args = {
 	type: 'primary',
 	variant: 'filled',
+	shape: 'rounded',
+	raised: true,
 };

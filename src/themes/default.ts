@@ -6,10 +6,19 @@ const colors = {
 	coral: '#fb8f67',
 	white: '#f2f2f2',
 	mediumPurple: '#9370DB',
+	black: '#0e0e0e',
+};
+
+const tokens = {
+	primary: colors.mint,
+	secondary: colors.naplesYellow,
+	danger: colors.coral,
 };
 
 const defaultTheme =  {
-	'--primary': colors.mint,
+	'--primary': tokens.primary,
+	'--secondary': tokens.secondary,
+	'--danger': tokens.primary,
 
 	/* Alert Variables */
 	'--alert--error--background-color': `${colors.coral}aa`,
@@ -18,6 +27,17 @@ const defaultTheme =  {
 	'--alert--warning--border-color': colors.naplesYellow,
 	'--alert--info--background-color': `${colors.mediumPurple}aa`,
 	'--alert--info--border-color': colors.mediumPurple,
+
+	/* Button Variables */
+	'--button--primary--background-color': tokens.primary,
+	'--button--primary--border-color': tokens.primary,
+	'--button--primary--color': colors.black,
+	'--button--secondary--background-color': tokens.secondary,
+	'--button--secondary--border-color': tokens.secondary,
+	'--button--secondary--color': colors.black,
+	'--button--danger--background-color': tokens.danger,
+	'--button--danger--border-color': tokens.danger,
+	'--button--danger--color': colors.black,
 
 	/* Card Variables */
 	'--card--background-color': colors.white,

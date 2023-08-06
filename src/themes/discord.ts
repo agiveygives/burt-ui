@@ -1,26 +1,53 @@
+/* https://i.redd.it/kc1uyz4qowx61.png */
+
 const colors = {
-	blurple: '#7289da',
-	white: '#e0e0e0',
-	greyple: '#99aab5',
-	lessdark: '#3b3b3b',
-	dark: '#2c2f33',
-	darker: '#23272a1',
+	brillianceRed: '#F47B67',
+	hyperSquadYellow: '#F8A532',
+	bugHuntGreen: '#48B784',
+	balanceCyan: '45DDC0',
+	greyple: '#99AAB5',
+	notQuiteBlack: '#23272A1',
+	nitroGrey: 'B7C2CE',
+	partnerBlue: '#4187ED',
+	darkModeGrey: '#36393F',
+	developerBlue: '#3E70DD',
+	nitroBlue: '#4F5D7F',
+	blurple: '#7289DA',
+	darkBlurple: '#4E5D94',
+	braveryPurple: '#9C84EF',
+	boostPink: 'F47FFF',
+	fullWhite: '#FFFFFF',
 };
 
 const discordTheme = {
-	'--primary': colors.blurple,
-	'--light': colors.white,
+	/* Alert Variables */
+	'--alert--error--background-color': `${colors.brillianceRed}aa`,
+	'--alert--error--border-color': colors.brillianceRed,
+	'--alert--warning--background-color': `${colors.hyperSquadYellow}aa`,
+	'--alert--warning--border-color': colors.hyperSquadYellow,
+	'--alert--info--background-color': `${colors.braveryPurple}aa`,
+	'--alert--info--border-color': colors.braveryPurple,
 
-	/* button variables */
-	'--button-primary-background': colors.white,
+
+	/* Button Variables */
+	'--button--primary--background-color': colors.blurple,
+	'--button--primary--border-color': colors.blurple,
+	'--button--primary--color': colors.fullWhite,
+	'--button--secondary--background-color': colors.greyple,
+	'--button--secondary--border-color': colors.greyple,
+	'--button--secondary--color': colors.notQuiteBlack,
+	'--button--danger--background-color': colors.brillianceRed,
+	'--button--danger--border-color': colors.brillianceRed,
+	'--button--danger--color': colors.notQuiteBlack,
 
 	/* card variables */
-	'--card--background-color': colors.dark,
-	'--card--color': colors.white,
+	'--card--background-color': colors.darkModeGrey,
+	'--card--color': colors.fullWhite,
+	'--card--padding': '15px',
 
 	/* footer variables */
 	'--footer--background-color': 'black',
-	'--footer--color': colors.white,
+	'--footer--color': colors.fullWhite,
 
 	/* header variables */
 	'--header-background': colors.blurple,
@@ -33,12 +60,12 @@ const discordTheme = {
 	'--header-logo-width': '40px',
 
 	/* input */
-	'--input--background-color': colors.lessdark,
-	'--input--color': colors.white,
+	'--input--background-color': colors.darkBlurple,
+	'--input--color': colors.fullWhite,
 
 	/* section header variables */
 	'--section-header--background-color': colors.blurple,
-	'--section-header--color': colors.dark,
+	'--section-header--color': colors.darkModeGrey,
 
 	/* switch variables */
 	'--switch--checked--background-color': colors.blurple,

@@ -11,6 +11,10 @@ export default {
 	argTypes: {},
 	args: {
 		children: 'Button',
+		type: 'primary',
+		variant: 'filled',
+		shape: 'rounded',
+		raised: true,
 	}
 } as Meta<typeof Button>;
 
@@ -24,8 +28,9 @@ const Template: StoryFn<typeof Button> = (args) => (
 export const Primary = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Primary.args = {
-	type: 'primary',
-	variant: 'filled',
-	shape: 'rounded',
-	raised: true,
 };
+
+export const IconButton = Template.bind({});
+IconButton.args = {
+	icon: (<div>X</div>),
+}

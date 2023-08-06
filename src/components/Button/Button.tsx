@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import { ButtonPropTypes } from './types';
 import styles from './styles.module.css';
 
-const Button = ({ type, variant, raised, shape, children }: ButtonPropTypes) => (
+const Button = ({ type, variant, raised, shape, icon, children }: ButtonPropTypes) => (
 	<button
 		className={classNames(
 			styles.button,
@@ -24,8 +24,12 @@ const Button = ({ type, variant, raised, shape, children }: ButtonPropTypes) => 
 				[styles.rounded]: shape === 'rounded',
 				[styles.pill]: shape === 'pill',
 			}
-		)}>
-		{children}
+		)}
+	>
+		<div className={styles.childrenContainer}>
+			{icon}
+			{children}
+		</div>
 	</button>
 );
 
